@@ -9,7 +9,7 @@ load_dotenv()
 # Define the names of resources to delete
 BUCKET_NAME = os.getenv("AWS_BUCKET_NAME")
 GLUE_DATABASE_NAME = os.getenv("GLUE_DATABASE_NAME")
-
+region = "us-east-1" 
 def bucket_exists(bucket_name):
     """Check if an S3 bucket exists."""
     s3 = boto3.client("s3")
