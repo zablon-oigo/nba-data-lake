@@ -13,6 +13,7 @@ jobs:
         API_KEY: ${{secrets.API_KEY}}
         NBA_ENDPOINT: ${{secrets.NBA_ENDPOINT}}
         GLUE_DATABASE_NAME: ${{secrets.GLUE_DATABASE_NAME}}
+        AWS_REGION: us-east-1
 
     steps:
     - name: Checkout repository
