@@ -12,7 +12,7 @@ GLUE_DATABASE_NAME = os.getenv("GLUE_DATABASE_NAME")
 region = os.getenv("AWS_REGION", "us-east-1")
 def bucket_exists(bucket_name):
     """Check if an S3 bucket exists."""
-    s3 = boto3.client("s3")
+    s3 = boto3.client("s3", region_name=region)
     try:
         s3.head_bucket(Bucket=bucket_name)
         return True
@@ -59,16 +59,14 @@ def delete_s3_bucket(bucket_name):
 
 def delete_glue_resources(database_name):
     """Delete Glue database and associated tables."""
-    glue = boto3.client("glue")
+    glue = boto3.client("glue", region_name=region)
     try:
         print(f"Deleting Glue database: {database_name}")
-        # Get tables in the database
         tables = glue.get_tables(DatabaseName=database_name)["TableList"]
         for table in tables:
             table_name = table["Name"]
             print(f"Deleting Glue table: {table_name} in database {database_name}")
             glue.delete_table(DatabaseName=database_name, Name=table_name)
-        # Delete the database
         glue.delete_database(Name=database_name)
         print(f"Deleted Glue database: {database_name}")
     except ClientError as e:
