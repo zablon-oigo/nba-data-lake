@@ -9,10 +9,10 @@ load_dotenv()
 
 # AWS configurations
 region = "us-east-1"  
-bucket_name = os.getenv("BUCKET_NAME")
+bucket_name = os.getenv("AWS_BUCKET_NAME")
 glue_database_name = os.getenv("GLUE_DATABASE_NAME")
 athena_output_location = f"s3://{bucket_name}/athena-results/"
-api_key = os.getenv("SPORTS_DATA_API_KEY")
+api_key = os.getenv("API_KEY")
 nba_endpoint = os.getenv("NBA_ENDPOINT")
 
 # Create AWS clients

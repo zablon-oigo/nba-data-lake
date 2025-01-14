@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 # Define the names of resources to delete
-BUCKET_NAME = os.getenv("BUCKET_NAME")
+BUCKET_NAME = os.getenv("AWS_BUCKET_NAME")
 GLUE_DATABASE_NAME = os.getenv("GLUE_DATABASE_NAME")
 
 def bucket_exists(bucket_name):
