@@ -2,7 +2,7 @@
 
 
 ## NBA Data Lake
-This project automates the creation of a data lake for NBA analytics using AWS services.Amazon S3 bucket stores both raw and processed data. Sample NBA data in JSON format is uploaded to the S3 bucket for analysis. AWS Glue database defines an external table, enabling seamless querying of the data through Amazon Athena.
+This project automates the creation of a data lake for NBA API using AWS services. Amazon S3 bucket stores both raw and processed data. Sample NBA data in JSON format is uploaded to the S3 bucket for analysis. AWS Glue database defines an external table, enabling seamless querying of the data through Amazon Athena.
 This setup provides an efficient, fast, and cost-effective solution for performing analytics on the NBA dataset stored in the S3 bucket.
 ### Run Locally
 
